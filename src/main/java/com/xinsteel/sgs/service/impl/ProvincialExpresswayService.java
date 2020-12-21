@@ -4,5 +4,5 @@ public interface ProvincialExpresswayService {
     public void SendMessage();
 
 
-    public void GetToken();
+    public String SendToken();
 }

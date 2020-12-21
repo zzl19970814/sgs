@@ -1,5 +1,6 @@
 package com.xinsteel.sgs.controller;
 
+import com.xinsteel.sgs.service.impl.ProvincialExpresswayService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provincialExpressway")
 public class ProvincialExpresswayController {
 
+    private ProvincialExpresswayService provincialExpresswayService;
+
     @PostMapping("/sendMessage")
     public void SendMessage(){
 
@@ -17,7 +20,8 @@ public class ProvincialExpresswayController {
     }
 
     @PostMapping("/getToken")
-    public String GetToken(){
-        return null;
+    public String SendToken(){
+        String token = provincialExpresswayService.SendToken();
+        return token;
     }
 }
