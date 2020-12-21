@@ -15,4 +15,9 @@ public class ProvincialExpresswayController {
 
 
     }
+
+    @PostMapping("/getToken")
+    public String GetToken(){
+        return null;
+    }
 }
