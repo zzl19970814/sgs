@@ -19,9 +19,4 @@ public class ProvincialExpresswayController {
 
     }
 
-    @PostMapping("/getToken")
-    public String SendToken(){
-        String token = provincialExpresswayService.SendToken();
-        return token;
-    }
 }

@@ -12,10 +12,5 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
 
     }
 
-    @Override
-    public String SendToken() {
 
-
-        return null;
-    }
 }
