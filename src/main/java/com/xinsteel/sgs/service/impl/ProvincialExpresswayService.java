@@ -1,6 +1,9 @@
 package com.xinsteel.sgs.service.impl;
 
-public interface ProvincialExpresswayService {
-    public void SendMessage();
+import com.alibaba.fastjson.JSONObject;
 
+public interface ProvincialExpresswayService {
+    public String SendMessage();
+
+    public  String SelectOrderNo();
 }
