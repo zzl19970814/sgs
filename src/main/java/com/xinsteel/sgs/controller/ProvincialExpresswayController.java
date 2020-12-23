@@ -1,22 +1,21 @@
 package com.xinsteel.sgs.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.xinsteel.sgs.service.impl.ProvincialExpresswayServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/provincialExpressway")
 public class ProvincialExpresswayController {
 
-    @PostMapping("/sendMessage")
+    @Autowired
+    private ProvincialExpresswayServiceImpl provincialExpresswayService;
+
+    @GetMapping("/sendMessage")
     public void SendMessage(){
-
-
+        provincialExpresswayService.SendMessage();
     }
-
-    @PostMapping("/getToken")
     public String GetToken(){
         return null;
     }
