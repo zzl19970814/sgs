@@ -17,4 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo> implements OrderInfoService {
 
+    @Override
+    public void saveOrderInfo() {
+        OrderInfo orderInfo = new OrderInfo();
+        
+    }
 }
