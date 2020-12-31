@@ -24,9 +24,11 @@ public class OrderInfoController {
     OrderInfoService orderInfoService;
 
     @GetMapping("/abc")
-    public String saveOrderInfo(){
-        return "asdf";
-//        orderInfoService.saveOrderInfo();
+    public boolean saveOrderInfo(){
+        boolean bool = orderInfoService.saveOrderInfo();
+        return bool;
     }
+
+
 }
 

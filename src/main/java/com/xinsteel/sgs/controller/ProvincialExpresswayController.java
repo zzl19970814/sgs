@@ -14,7 +14,7 @@ public class ProvincialExpresswayController {
 
     @GetMapping("/sendMessage")
     public void SendMessage(){
-        provincialExpresswayService.SendMessage();
+        provincialExpresswayService.sendMessage();
     }
     public String GetToken(){
         return null;

@@ -3,6 +3,8 @@ package com.xinsteel.sgs.service;
 import com.xinsteel.sgs.entity.OrderInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,5 +15,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface OrderInfoService extends IService<OrderInfo> {
 
-    void saveOrderInfo();
+    boolean saveOrderInfo();
+
+    List selectAllOrderIds();
+
+
+    boolean existOrderInfo(String orderId);
 }
