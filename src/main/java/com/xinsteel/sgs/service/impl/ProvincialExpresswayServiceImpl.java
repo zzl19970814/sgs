@@ -399,33 +399,33 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
         OrderInfo orderInfo = orderInfoService.getById(orderId);
 
         Map<String, Object> orderFormMap = new HashMap<>();
-        orderFormMap.put("orderFormId",orderInfo.getOrderFormId() == null ? " " : orderInfo.getOrderFormId());
-        orderFormMap.put("orderFormType", orderInfo.getOrderFormType() == null ? "":orderInfo.getOrderFormType());
-        orderFormMap.put("orderFormcreateTime", orderInfo.getOrderFormCreatetime() == null ? "":orderInfo.getOrderFormCreatetime());
-        orderFormMap.put("orderFormEndTime", orderInfo.getOrderFormEndTime() == null ? "":orderInfo.getOrderFormEndTime());
-        orderFormMap.put("startThing", orderInfo.getStartThing() == null ? "":orderInfo.getStartThing());
-        orderFormMap.put("startThinglat", orderInfo.getStartThingLat() == null ? "":orderInfo.getStartThingLat());
-        orderFormMap.put("startThinglng", orderInfo.getStartThingLng() == null ? "":orderInfo.getStartThingLng());
-        orderFormMap.put("endThing", orderInfo.getEndThing() == null ? "":orderInfo.getEndThing());
-        orderFormMap.put("endThinglat", orderInfo.getEndThingLat() == null ? "":orderInfo.getEndThingLat());
-        orderFormMap.put("endThinglng", orderInfo.getEndThingLng() == null ? "":orderInfo.getEndThingLng());
+        orderFormMap.put("orderFormId",orderInfo.getOrderFormId() == null ? "null" : orderInfo.getOrderFormId());
+        orderFormMap.put("orderFormType", orderInfo.getOrderFormType() == null ? "null":orderInfo.getOrderFormType());
+        orderFormMap.put("orderFormcreateTime", orderInfo.getOrderFormCreatetime() == null ? "null":orderInfo.getOrderFormCreatetime());
+        orderFormMap.put("orderFormEndTime", orderInfo.getOrderFormEndTime() == null ? "null":orderInfo.getOrderFormEndTime());
+        orderFormMap.put("startThing", orderInfo.getStartThing() == null ? "null":orderInfo.getStartThing());
+        orderFormMap.put("startThinglat", orderInfo.getStartThingLat() == null ? "null":orderInfo.getStartThingLat());
+        orderFormMap.put("startThinglng", orderInfo.getStartThingLng() == null ? "null":orderInfo.getStartThingLng());
+        orderFormMap.put("endThing", orderInfo.getEndThing() == null ? "null":orderInfo.getEndThing());
+        orderFormMap.put("endThinglat", orderInfo.getEndThingLat() == null ? "null":orderInfo.getEndThingLat());
+        orderFormMap.put("endThinglng", orderInfo.getEndThingLng() == null ? "null":orderInfo.getEndThingLng());
         orderFormMap.put("orderFormHandle", orderInfo.getOrderFormHandle().trim().equals("订单生效") ? "8":"13");
-        orderFormMap.put("orderFormEstimate", orderInfo.getOrderFormEstimate() == null ? "":orderInfo.getOrderFormEstimate());
-        orderFormMap.put("orderFormEvaluation", orderInfo.getOrderFormEvaluation() == null ? "":orderInfo.getOrderFormEvaluation());
-        orderFormMap.put("materialName", orderInfo.getMaterialName() == null ? "":orderInfo.getMaterialName());
-        orderFormMap.put("materialNmber", orderInfo.getMaterialNumber() == null ? "":orderInfo.getMaterialNumber());
+        orderFormMap.put("orderFormEstimate", orderInfo.getOrderFormEstimate() == null ? "null":orderInfo.getOrderFormEstimate());
+        orderFormMap.put("orderFormEvaluation", orderInfo.getOrderFormEvaluation() == null ? "null":orderInfo.getOrderFormEvaluation());
+        orderFormMap.put("materialName", orderInfo.getMaterialName() == null ? "null":orderInfo.getMaterialName());
+        orderFormMap.put("materialNmber", orderInfo.getMaterialNumber() == null ? "null":orderInfo.getMaterialNumber());
 
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("DESCRIPTION", orderInfo.getCustomerUserName() == null ? "":orderInfo.getCustomerUserName());
-        userMap.put("EMAIL", orderInfo.getCustomerUserEmail() == null ? "":orderInfo.getCustomerUserEmail());
-        userMap.put("MOBILE", orderInfo.getCustomerUserMobile() == null ? "":orderInfo.getCustomerUserMobile());
+        userMap.put("DESCRIPTION", orderInfo.getCustomerUserName() == null ? "null":orderInfo.getCustomerUserName());
+        userMap.put("EMAIL", orderInfo.getCustomerUserEmail() == null ? "null":orderInfo.getCustomerUserEmail());
+        userMap.put("MOBILE", orderInfo.getCustomerUserMobile() == null ? "null":orderInfo.getCustomerUserMobile());
 
         orderFormMap.put("customerUser", userMap);
 
         Map<String, Object> carrierMap = new HashMap<>();
-        carrierMap.put("DESCRIPTION", orderInfo.getCarrierUserName() == null ? "":orderInfo.getCarrierUserName());
-        carrierMap.put("EMAIL", orderInfo.getCarrierUserEmail() == null ? "":orderInfo.getCarrierUserEmail());
-        carrierMap.put("MOBILE", orderInfo.getCarrierUserMobile() == null ? "":orderInfo.getCarrierUserMobile());
+        carrierMap.put("DESCRIPTION", orderInfo.getCarrierUserName() == null ? "null":orderInfo.getCarrierUserName());
+        carrierMap.put("EMAIL", orderInfo.getCarrierUserEmail() == null ? "null":orderInfo.getCarrierUserEmail());
+        carrierMap.put("MOBILE", orderInfo.getCarrierUserMobile() == null ? "null":orderInfo.getCarrierUserMobile());
 
         orderFormMap.put("carrierUser", carrierMap);
 
@@ -439,10 +439,10 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
         for (TransportInfo info : transportInfoList
         ) {
             Map<String, Object> temp = new HashMap<>();
-            temp.put("waybillId", info.getWaybillId() == null ? "":info.getWaybillId());
-            temp.put("tare", info.getTare() == null ? "":info.getTare());
-            temp.put("netWeight", info.getNetWeight() == null ? "":info.getNetWeight());
-            temp.put("grossWeight", info.getGrossWeight() == null ? "":info.getGrossWeight());
+            temp.put("waybillId", info.getWaybillId() == null ? "null":info.getWaybillId());
+            temp.put("tare", info.getTare() == null ? "null":info.getTare());
+            temp.put("netWeight", info.getNetWeight() == null ? "null":info.getNetWeight());
+            temp.put("grossWeight", info.getGrossWeight() == null ? "null":info.getGrossWeight());
             String waybillStartTime = info.getWaybillStartTime();
             String time = "";
             if (!StringUtils.isEmpty(waybillStartTime)){
@@ -451,15 +451,15 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
                 time = ts[0] + " " + substring;
             }
             temp.put("waybillStartTime", time);
-            temp.put("waybillEndTime", info.getWaybillEndTime() == null ? "":info.getWaybillEndTime());
-            temp.put("waybillHandle", info.getWaybillHandle() == null ? "":info.getWaybillHandle());
-            temp.put("leadseal", info.getLeadseal() == null ? "":info.getLeadseal());
-            temp.put("wholeName", info.getWholeName() == null ? "":info.getWholeName());
+            temp.put("waybillEndTime", info.getWaybillEndTime() == null ? "null":info.getWaybillEndTime());
+            temp.put("waybillHandle", info.getWaybillHandle() == null ? "null":info.getWaybillHandle());
+            temp.put("leadseal", info.getLeadseal() == null ? "null":info.getLeadseal());
+            temp.put("wholeName", info.getWholeName() == null ? "null":info.getWholeName());
 
             Map<String, String> driverUserMap = new HashMap<>();
-            driverUserMap.put("DESCRIPTION", info.getDriverUserName() == null ? "":info.getDriverUserName());
-            driverUserMap.put("EMAIL", info.getDriverUserEmail() == null ? "":info.getDriverUserEmail());
-            driverUserMap.put("MOBILE", info.getDriverUserMobile() == null ? "":info.getDriverUserMobile());
+            driverUserMap.put("DESCRIPTION", info.getDriverUserName() == null ? "null":info.getDriverUserName());
+            driverUserMap.put("EMAIL", info.getDriverUserEmail() == null ? "null":info.getDriverUserEmail());
+            driverUserMap.put("MOBILE", info.getDriverUserMobile() == null ? "null":info.getDriverUserMobile());
 
             temp.put("driverUser", driverUserMap);
             // 添加
