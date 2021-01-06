@@ -71,7 +71,7 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
 
         // 保存运单信息
         //saveTransportInfo();
-        String url="http://2yxmkk.natappfree.cc/TMS_SetOrder/loginUlog?username=xgjt&password=1234qwer";
+        String url="http://iehsw5.natappfree.cc/TMS_SetOrder/loginUlog?username=xgjt&password=1234qwer";
         String s=HttpRequest.sendPost(url,"");
         System.out.println(s);
 
@@ -94,9 +94,12 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
             System.out.println(json);
 
 
-            String url="http://2yxmkk.natappfree.cc/TMS_SetOrder/setOrderFormInfoToEnd?TMS_TOKEN="+TMS_TOKEN;
+            String url="http://iehsw5.natappfree.cc/TMS_SetOrder/setOrderFormInfoToEnd?TMS_TOKEN="+TMS_TOKEN;
+            System.out.println(url);
 
-           String s = HttpRequest.sendPost(url, json);
+//            String jsonObject="["+json+"]";
+//            System.out.println(jsonObject);
+            String s = HttpRequest.sendPost(url, json);
             System.out.println(s);
 
         }
@@ -399,33 +402,33 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
         OrderInfo orderInfo = orderInfoService.getById(orderId);
 
         Map<String, Object> orderFormMap = new HashMap<>();
-        orderFormMap.put("orderFormId",orderInfo.getOrderFormId() == null ? "null" : orderInfo.getOrderFormId());
-        orderFormMap.put("orderFormType", orderInfo.getOrderFormType() == null ? "null":orderInfo.getOrderFormType());
-        orderFormMap.put("orderFormcreateTime", orderInfo.getOrderFormCreatetime() == null ? "null":orderInfo.getOrderFormCreatetime());
-        orderFormMap.put("orderFormEndTime", orderInfo.getOrderFormEndTime() == null ? "null":orderInfo.getOrderFormEndTime());
-        orderFormMap.put("startThing", orderInfo.getStartThing() == null ? "null":orderInfo.getStartThing());
-        orderFormMap.put("startThinglat", orderInfo.getStartThingLat() == null ? "null":orderInfo.getStartThingLat());
-        orderFormMap.put("startThinglng", orderInfo.getStartThingLng() == null ? "null":orderInfo.getStartThingLng());
-        orderFormMap.put("endThing", orderInfo.getEndThing() == null ? "null":orderInfo.getEndThing());
-        orderFormMap.put("endThinglat", orderInfo.getEndThingLat() == null ? "null":orderInfo.getEndThingLat());
-        orderFormMap.put("endThinglng", orderInfo.getEndThingLng() == null ? "null":orderInfo.getEndThingLng());
+        orderFormMap.put("orderFormId",orderInfo.getOrderFormId());
+        orderFormMap.put("orderFormType", orderInfo.getOrderFormType());
+        orderFormMap.put("orderFormcreateTime", orderInfo.getOrderFormCreatetime());
+        orderFormMap.put("orderFormEndTime", orderInfo.getOrderFormEndTime());
+        orderFormMap.put("startThing", orderInfo.getStartThing());
+        orderFormMap.put("startThinglat", orderInfo.getStartThingLat());
+        orderFormMap.put("startThinglng", orderInfo.getStartThingLng());
+        orderFormMap.put("endThing", orderInfo.getEndThing());
+        orderFormMap.put("endThinglat", orderInfo.getEndThingLat());
+        orderFormMap.put("endThinglng", orderInfo.getEndThingLng());
         orderFormMap.put("orderFormHandle", orderInfo.getOrderFormHandle().trim().equals("订单生效") ? "8":"13");
-        orderFormMap.put("orderFormEstimate", orderInfo.getOrderFormEstimate() == null ? "null":orderInfo.getOrderFormEstimate());
-        orderFormMap.put("orderFormEvaluation", orderInfo.getOrderFormEvaluation() == null ? "null":orderInfo.getOrderFormEvaluation());
-        orderFormMap.put("materialName", orderInfo.getMaterialName() == null ? "null":orderInfo.getMaterialName());
-        orderFormMap.put("materialNmber", orderInfo.getMaterialNumber() == null ? "null":orderInfo.getMaterialNumber());
+        orderFormMap.put("orderFormEstimate", orderInfo.getOrderFormEstimate());
+        orderFormMap.put("orderFormEvaluation", orderInfo.getOrderFormEvaluation());
+        orderFormMap.put("materialName", orderInfo.getMaterialName());
+        orderFormMap.put("materialNmber", orderInfo.getMaterialNumber());
 
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("DESCRIPTION", orderInfo.getCustomerUserName() == null ? "null":orderInfo.getCustomerUserName());
-        userMap.put("EMAIL", orderInfo.getCustomerUserEmail() == null ? "null":orderInfo.getCustomerUserEmail());
-        userMap.put("MOBILE", orderInfo.getCustomerUserMobile() == null ? "null":orderInfo.getCustomerUserMobile());
+        userMap.put("DESCRIPTION", orderInfo.getCustomerUserName());
+        userMap.put("EMAIL", orderInfo.getCustomerUserEmail());
+        userMap.put("MOBILE", orderInfo.getCustomerUserMobile());
 
         orderFormMap.put("customerUser", userMap);
 
         Map<String, Object> carrierMap = new HashMap<>();
-        carrierMap.put("DESCRIPTION", orderInfo.getCarrierUserName() == null ? "null":orderInfo.getCarrierUserName());
-        carrierMap.put("EMAIL", orderInfo.getCarrierUserEmail() == null ? "null":orderInfo.getCarrierUserEmail());
-        carrierMap.put("MOBILE", orderInfo.getCarrierUserMobile() == null ? "null":orderInfo.getCarrierUserMobile());
+        carrierMap.put("DESCRIPTION", orderInfo.getCarrierUserName());
+        carrierMap.put("EMAIL", orderInfo.getCarrierUserEmail());
+        carrierMap.put("MOBILE", orderInfo.getCarrierUserMobile());
 
         orderFormMap.put("carrierUser", carrierMap);
 
@@ -439,10 +442,10 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
         for (TransportInfo info : transportInfoList
         ) {
             Map<String, Object> temp = new HashMap<>();
-            temp.put("waybillId", info.getWaybillId() == null ? "null":info.getWaybillId());
-            temp.put("tare", info.getTare() == null ? "null":info.getTare());
-            temp.put("netWeight", info.getNetWeight() == null ? "null":info.getNetWeight());
-            temp.put("grossWeight", info.getGrossWeight() == null ? "null":info.getGrossWeight());
+            temp.put("waybillId", info.getWaybillId());
+            temp.put("tare", info.getTare());
+            temp.put("netWeight", info.getNetWeight());
+            temp.put("grossWeight", info.getGrossWeight());
             String waybillStartTime = info.getWaybillStartTime();
             String time = "";
             if (!StringUtils.isEmpty(waybillStartTime)){
@@ -451,15 +454,15 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
                 time = ts[0] + " " + substring;
             }
             temp.put("waybillStartTime", time);
-            temp.put("waybillEndTime", info.getWaybillEndTime() == null ? "null":info.getWaybillEndTime());
-            temp.put("waybillHandle", info.getWaybillHandle() == null ? "null":info.getWaybillHandle());
-            temp.put("leadseal", info.getLeadseal() == null ? "null":info.getLeadseal());
-            temp.put("wholeName", info.getWholeName() == null ? "null":info.getWholeName());
+            temp.put("waybillEndTime", info.getWaybillEndTime());
+            temp.put("waybillHandle", info.getWaybillHandle());
+            temp.put("leadseal", info.getLeadseal());
+            temp.put("wholeName", info.getWholeName());
 
             Map<String, String> driverUserMap = new HashMap<>();
-            driverUserMap.put("DESCRIPTION", info.getDriverUserName() == null ? "null":info.getDriverUserName());
-            driverUserMap.put("EMAIL", info.getDriverUserEmail() == null ? "null":info.getDriverUserEmail());
-            driverUserMap.put("MOBILE", info.getDriverUserMobile() == null ? "null":info.getDriverUserMobile());
+            driverUserMap.put("DESCRIPTION", info.getDriverUserName());
+            driverUserMap.put("EMAIL", info.getDriverUserEmail());
+            driverUserMap.put("MOBILE", info.getDriverUserMobile());
 
             temp.put("driverUser", driverUserMap);
             // 添加
@@ -469,10 +472,11 @@ public class ProvincialExpresswayServiceImpl implements ProvincialExpresswayServ
             driverUserMap = new HashMap<>();
         }
 
+
         orderFormMap.put("waybill", billList);
 
         String json =  JSONObject.toJSONString(orderFormMap);
-        System.out.println(json);
+        //System.out.println(json);
         return json;
     }
 }

@@ -77,6 +77,7 @@ public class HttpRequest {
             URLConnection conn = realUrl.openConnection();
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
+            conn.setRequestProperty("Content-Type","application/json");
             conn.setRequestProperty("user-agent",
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             // 发送POST请求必须设置如下两行
@@ -114,10 +115,12 @@ public class HttpRequest {
         return result;
     }
 
-    public static void main(String[] args) {
-        String url = "http://172.16.4.238:8080/DataQuerySocket/service/XbToMesPactImportService/SalePlan";
-        String jsonObject = "[{\"pageIndex\":1,\"pageSize\":1,\"startTime\":\"2020-08-10\",\"endTime\":\"2020-08-13\",\"memo0\":\"\",\"memo1\":\"\",\"memo2\":\"\",\"memo3\":\"\",\"memo4\": \"95\"}]";
-        String result =  HttpRequest.sendPost(url,jsonObject);
-        System.out.println(result);
-    }
+//    public static void main(String[] args) {
+//        String url = "http://172.16.4.238:8080/DataQuerySocket/service/XbToMesPactImportService/SalePlan";
+//        String jsonObject = "[{\"pageIndex\":1,\"pageSize\":1,\"startTime\":\"2020-08-10\",\"endTime\":\"2020-08-13\",\"memo0\":\"\",\"memo1\":\"\",\"memo2\":\"\",\"memo3\":\"\",\"memo4\": \"95\"}]";
+//        String result =  HttpRequest.sendPost(url,jsonObject);
+//        System.out.println(result);
+//
+//        NewPost.post();
+//    }
 }
